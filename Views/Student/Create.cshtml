@@ -1,0 +1,123 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}<form action="post" class="container my-5">
+      <h1 class="display-4 fw-bold text-primary">Registration Form</h1>
+      <p class="text-start text-secondary">
+        Please fill this form in order to create a new account.
+      </p>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="your full name..."
+        />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone No</label>
+        <input
+          type="number"
+          class="form-control"
+          id="phone"
+          placeholder="98xxxxxxxx"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="Email"
+          placeholder="example@gmail.com"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <div class="d-flex gap-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="male"
+            />
+            <label class="form-check-label" for="male"> Male </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="female"
+            />
+            <label class="form-check-label" for="female"> Female </label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <select
+          class="form-select"
+          id="department"
+          aria-label="Default select example"
+        >
+          <option selected>Select department</option>
+          <option value="it">IT</option>
+          <option value="account">Account</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="department" class="form-label">Optional Subject</label>
+        <div class="d-flex gap-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="math"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Math
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="english"
+              id="flexCheckChecked"
+            />
+            <label class="form-check-label" for="flexCheckChecked">
+              English
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="nepali"
+              id="flexCheckCheckedNepali"
+            />
+            <label class="form-check-label" for="flexCheckCheckedNepali">
+              Nepali
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Message</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          placeholder="your message.."
+          rows="3"
+        ></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Register</button>
+    </form>
