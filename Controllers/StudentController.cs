@@ -16,7 +16,7 @@ namespace StudentManagementSystemN1.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Student obj)
+        public IActionResult Create(StudentViewModel obj)
         {
             return View();
         }
