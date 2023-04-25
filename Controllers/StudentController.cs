@@ -39,7 +39,7 @@ namespace StudentManagementSystemN1.Controllers
             //studentOptSubject.SubjectName=obj.  
 
 
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

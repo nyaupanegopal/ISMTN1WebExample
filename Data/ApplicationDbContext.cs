@@ -12,5 +12,6 @@ namespace StudentManagementSystemN1.Data
         }
         public DbSet<Student> Students { get; set; }
         public DbSet<StudentOptSubject> StudentOptSubjects { get; set; }
+        public DbSet<StudentManagementSystemN1.Models.Department> Department { get; set; }
     }
 }
