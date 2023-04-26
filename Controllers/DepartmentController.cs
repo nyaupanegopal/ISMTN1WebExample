@@ -1,13 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StudentManagementSystemN1.Data;
 using StudentManagementSystemN1.Models;
 
 namespace StudentManagementSystemN1.Controllers
 {
     public class DepartmentController : Controller
     {
+        private ApplicationDbContext _context;
+        public DepartmentController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
-            return View();
+            List<Department> departmentList=_context.Department.ToList();
+            return View(departmentList);
         }
         public IActionResult Create()
         {
@@ -16,7 +23,9 @@ namespace StudentManagementSystemN1.Controllers
         [HttpPost]
         public IActionResult Create(Department obj)
         {
-            return View();
+            _context.Department.Add(obj);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
