@@ -32,5 +32,17 @@ namespace StudentManagementSystemN1.Controllers
             var data=_context.Department.Where(x => x.DepartmentId==id).FirstOrDefault();   
             return View(data);
         }
+        [HttpPost]
+        public IActionResult Edit(Department Obj)
+        {
+            var olddata = _context.Department.Where(x => x.DepartmentId == Obj.DepartmentId).FirstOrDefault();
+            olddata.Name= Obj.Name;
+            olddata.Desc= Obj.Desc;
+            olddata.CreatedDate= Obj.CreatedDate;
+            olddata.Status= Obj.Status;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
