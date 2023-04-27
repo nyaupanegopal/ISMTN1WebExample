@@ -27,5 +27,10 @@ namespace StudentManagementSystemN1.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult Edit(int id)
+        {
+            var data=_context.Department.Where(x => x.DepartmentId==id).FirstOrDefault();   
+            return View(data);
+        }
     }
 }
