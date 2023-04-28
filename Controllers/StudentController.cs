@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using StudentManagementSystemN1.Data;
 using StudentManagementSystemN1.Models;
 
@@ -19,6 +20,9 @@ namespace StudentManagementSystemN1.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            var data = _context.Department.ToList();
+            ViewBag.DepartmentList = new SelectList(data, "DepartmentId", "Name");
+            ViewBag.OptSubject = data;
             return View();
         }
         [HttpPost]

@@ -74,13 +74,35 @@
           class="form-select"
           id="department"
           asp-for="Department"
+          asp-items=@ViewBag.DepartmentList
           aria-label="Default select example"
         >
           <option selected>Select department</option>
-          <option value="it">IT</option>
-          <option value="account">Account</option>
-          <option value="other">Other</option>
+         
         </select>
+      </div>
+      <div class="mb-3">
+        <label for="department" class="form-label">Optional Subject</label>
+        @foreach(var item in ViewBag.OptSubject)
+        {
+            <div class="d-flex gap-3">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=@item.DepartmentId
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              @item.Name
+            </label>
+          </div>
+           </div>
+        }
+        
+        
+          
+       
       </div>
       <div class="mb-3">
         <label for="department" class="form-label">Optional Subject</label>

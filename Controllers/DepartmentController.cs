@@ -42,7 +42,13 @@ namespace StudentManagementSystemN1.Controllers
             olddata.Status= Obj.Status;
             _context.SaveChanges();
             return RedirectToAction("Index");
-
+        }
+        public IActionResult Delete(int id)
+        {
+            var data = _context.Department.Where(x => x.DepartmentId == id).FirstOrDefault();
+            _context.Department.Remove(data);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
